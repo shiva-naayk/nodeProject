@@ -1,0 +1,38 @@
+
+<div class="container">
+ <div class="row">
+   <div class="col-md-6 col-md-offset-3">
+<h2>Chat Messages</h2>
+<form [formGroup]="userAddForm">
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<label>User Name</label>
+		<input type="text" name="username" ngModel="{{user}}" formControlName="username">
+		</div>
+		<div class="col-md-6">
+			<label>choose room</label>
+		<select class="selectpicker" ngModel="{{room}}" formControlName="roomdata" name="roomdata">
+			
+		  <option>Hall</option>
+		  <option>Gold</option>
+		  <option>Fun</option>
+		</select><span><button class="btn btn-success" (click)="join()">Join</button></span><span><button class="btn btn-success" (click)="leave()">Leave</button></span>
+		</div>
+		
+  </div>
+</div>
+
+<div class="container darker">
+	<div *ngFor="let item of messageArray">
+  <span><strong>{{item.user}} :  </strong>  {{item.message}}</span>
+  </div>
+</div>
+<textarea rows="4" cols="50" style="width: 100%" id="text" formControlName="chat" ngModel="{{textMessage}}"></textarea>
+<button class="btn btn-primary" [disabled]="!userAddForm.valid" (click)="sendMessage()">Send message</button>
+</form>
+</div>
+</div>
+</div>
+
+
