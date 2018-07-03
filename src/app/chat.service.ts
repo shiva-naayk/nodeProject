@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 
 export class ChatService{
 
-	private socket= io('http://localhost:3000');  //http://demo.aminfocraft.com
+	private socket= io('https://damp-hamlet-99535.herokuapp.com:3000');  //http://demo.aminfocraft.com
 
 	joinRoom(data)
 	{
