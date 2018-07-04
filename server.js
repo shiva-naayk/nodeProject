@@ -5,7 +5,7 @@ var http = require('http');
 //const routes = require('./server/routes/routes');
  app.use(express.static(path.join(__dirname,'/dist')));
 // app.use('/routes',routes);
-app.get('*', (req,res)=>{
+app.get('/*', (req,res)=>{
 	res.sendFile(path.join(__dirname,'/dist/index.html'));
 })
 // app.set('dist', path.join(__dirname, 'dist'));
